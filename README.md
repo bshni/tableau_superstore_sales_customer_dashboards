@@ -79,6 +79,7 @@ Both dashboards have **Category** and **Sub-Category** filters, and I made custo
 - **Slow loading workbook:** Taqey and Saif's workbook took about a minute to open because the SQL Server name was typed wrong in the connection. I fixed it.
 - **Wrong data type:** Tableau picked the wrong type for the `Region` column in `dimLocation`. This exists in the other workbooks too, so I told the team.
 - **KPIs not reacting to filters:** my first fix was wrapping the calculations in `WINDOW_SUM`, which got the KPIs reacting but didn't work for distinct aggregations and the difference number still didn't update. I ended up using a separate sheet for the title/difference values instead, which solved it properly. The tutorial doesn't cover this, so I had to figure it out on my own.
+- **Wrong numbers in the Customer Distribution chart:** the gold layer has no Order ID, and the database design wasn't mine, so I had to find my own solution and joined `silver.encounters` to get it. That join is on Customer ID only, so the year came from the sales side while the Order ID came from the encounters side. Every 2016 sale got paired with all of that customer's orders from every year, and the order counts in the histogram and in the Top 10 table were inflated. I fixed it by taking the order date from the same table as the Order ID (`encounters`), counting distinct orders with `COUNTD`, and excluding the nulls that came from the other years. Now the bars add up to the 325 customers of the year.
 
 ## How to open it
 
