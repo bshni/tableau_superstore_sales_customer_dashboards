@@ -20,7 +20,11 @@ My team's Contribution to the project/
 screenshots/
 ├── sales_dashboard.png
 └── customer_dashboard.png
+
+Findings.md                                  # the 10 questions I picked, answered from the dashboards
 ```
+
+The written answers to the questions behind the dashboards are in [Findings.md](Findings.md).
 
 The rest of the folders (`database/`, `dataset/`, `icons/`, other teams' workbooks) come from the shared project. I didn't build the database, that was the team leader's work, I only connect to it.
 
