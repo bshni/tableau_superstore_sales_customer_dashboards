@@ -16,6 +16,10 @@ My team's Contribution to the project/
 ├── Mohamed Rashed and Ahmed Mahmoud.twb     # my workbook
 ├── Mohamed Rashed and Ahmed Mahmoud.twbx    # packaged version (data included)
 └── Mohamed Rashed and Ahmed Mahmoud .md     # my notes while building it
+
+screenshots/
+├── sales_dashboard.png
+└── customer_dashboard.png
 ```
 
 The rest of the folders (`database/`, `dataset/`, `icons/`, other teams' workbooks) come from the shared project. I didn't build the database, that was the team leader's work, I only connect to it.
@@ -38,23 +42,32 @@ I also had to join the `silver.encounters` table to get the Order ID, since it w
 
 ## What I built
 
-Two dashboards, both using the same layout.
+Two dashboards with the same layout, so they feel like one report. Both compare the selected year with the previous year (the default view is 2016 vs 2015), and the dots on the trend lines mark the highest month (teal) and the lowest month (orange).
+
+At the top of each one there's a **Show Filters** button and two buttons to jump between the dashboards.
 
 ### Sales Dashboard
-- KPIs: Total Sales, Total Profit, Total Quantity (each with current year vs previous year and the % difference)
-- Sales & Profit by customer **Segment**, which is interactive and filters the rest of the dashboard when you click a segment
-- Weekly Trends chart
+
+![Sales Dashboard](screenshots/sales_dashboard.png)
+
+- **KPIs:** Total Sales, Total Profit and Total Quantity, each with a Jan–Dec trend line against the previous year and the % difference vs PY.
+- **Sales & Profit by Segment:** the black bar is this year's sales and the grey bar behind it is last year's, so you see the change per segment at a glance. Next to it, the profit is teal when it's a profit and orange when it's a loss. A small orange dot next to a segment name flags that this year's sales were lower than last year's. Clicking a segment filters the rest of the dashboard.
+- **Sales & Profit Trends over time:** weekly sales and profit with a dashed average line. Teal means the week is above average and orange means below.
 
 ### Customer Dashboard
-- KPIs: Customers, Sales per Customer, Quantity per Customer
-- Customer Distribution (by number of orders per customer)
-- Top Customers
 
-Both dashboards have **Category** and **Sub-Category** filters, plus custom filter/clear-filter buttons (icons are in the `icons/` folder).
+![Customer Dashboard](screenshots/customer_dashboard.png)
+
+- **KPIs:** Total Customers, Total Sales per Customer and Total Quantity per Customer, same style as the sales ones (trend line vs previous year + % difference).
+- **Customer Distribution by Nr. of Orders:** how many customers placed 1 order, 2 orders, and so on.
+- **Top 10 Customers by Profit:** rank, customer, last order date, profit, sales and number of orders for the year.
+
+Both dashboards have **Category** and **Sub-Category** filters, and I made custom filter and clear-filter buttons (the icons are in the `icons/` folder).
 
 ## Design choices
 
-- Maximum of **4 colors** across everything, following the advice from Eng. Baraa ("Data with Baraa" on YouTube). It was my first Tableau project, so I followed his tutorial and only applied the parts relevant to my section.
+- Maximum of **4 colors** across everything: orange, teal, dark grey and light grey. This comes from Eng. Baraa's advice ("Data with Baraa" on YouTube). It was my first Tableau project, so I followed his tutorial and only applied the parts relevant to my section.
+- Teal always means good (highest month, profit, above average) and orange means bad (lowest month, loss, below average), so you can read the dashboards without a legend lookup.
 - KPI titles and numbers react to the filters, they're not static.
 
 ## Things I ran into
