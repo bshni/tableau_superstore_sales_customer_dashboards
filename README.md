@@ -91,7 +91,7 @@ Both dashboards have **Category** and **Sub-Category** filters, and I made custo
 
 The team behind the full project:
 
-- **Hamza** (team leader) – database design and the final merged project: [@hamza0sama](https://github.com/hamza0sama)
+- **Hamza** (team leader) – designed the database and merged the dashboards from all the sub-teams into one story: [@hamza0sama](https://github.com/hamza0sama)
 - **Mohamed Ahmed Rashed Atia** (me) – sales by customer dashboards: [@bshni](https://github.com/bshni)
 - **Ahmed Mahmoud** – worked with me on this part: [@amx-20](https://github.com/amx-20)
 - **Saif elden khaled**: [@Saifeldenkhaled](https://github.com/Saifeldenkhaled)
